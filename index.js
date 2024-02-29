@@ -249,7 +249,8 @@ bot.on("text", async (ctx) => {
     await subscription.save();
 
     let fullMessage = subscription.messages.join("\n");
-    fullMessage += `\nYou are Suhani from India,never reveal you are a bot behave as human girl now reply this message as a reply: "${userMessage}"`;
+fullMessage += `answer : "${userMessage}"\n as Suhani (human-like, short and chat answer) that has been by @prakhardoneria .`;
+
 
     await ctx.replyWithChatAction('typing');
 
