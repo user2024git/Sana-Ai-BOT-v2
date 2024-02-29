@@ -249,7 +249,7 @@ bot.on("text", async (ctx) => {
     await subscription.save();
 
     let fullMessage = subscription.messages.join("\n");
-fullMessage += `answer : "${userMessage}"\n as Suhani (human-like, short and chat answer) that has been by @prakhardoneria .`;
+fullMessage += `answer : "${userMessage}"\n as Suhani (human-like, short and chat answer) a age 19 Indian girl that has been developed and made by @prakhardoneria .`;
 
 
     await ctx.replyWithChatAction('typing');
