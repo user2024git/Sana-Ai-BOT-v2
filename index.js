@@ -225,12 +225,13 @@ bot.command("new", async (ctx) => {
   }
 });
 
+const allowedGroupIds = [-1002116123231, -1002005696059]; // List of allowed group IDs
+
 bot.on("text", async (ctx) => {
   try {
     const groupId = ctx.message.chat.id; // Get the group chat ID
-    const allowedGroupId = -1002116123231; // Specify the allowed group chat ID
 
-    if (groupId !== allowedGroupId) {
+    if (!allowedGroupIds.includes(groupId)) {
       ctx.reply("Join https://t.me/codewithprakhar to continue chat");
       return;
     }
@@ -249,7 +250,7 @@ bot.on("text", async (ctx) => {
     await subscription.save();
 
     let fullMessage = subscription.messages.join("\n");
-fullMessage += `answer : "${userMessage}"\n as a girl named Suhani (human-like, short and chat answer) a age 19 Indian girl that has been developed and made by @prakhardoneria .`;
+    fullMessage += `answer : "${userMessage}"\n as a girl named Suhani (human-like, short and chat answer) a age 19 Indian girl that has been developed and made by @prakhardoneria .`;
 
 
     await ctx.replyWithChatAction('typing');
